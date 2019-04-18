@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: local,default
+  
+logging:
+  level:
+    ROOT: info
+    org:
+      hibernate:
+        type: trace
+
+# Local env
+---
+spring:
+  profiles: local,default
+  jpa:
+    database: mysql
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/oauth2?characterEncoding=UTF-8&serverTimezone=UTC
+    username: woosuk1202
+    password: dev1202!
+    driverClassName: com.mysql.cj.jdbc.Driver
